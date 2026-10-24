@@ -13,7 +13,7 @@
 ## Login Page
 
 <p align="center">
-<img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Login%20Page.png" width="800">
+<img src="https://github.com/SumitRaj511/CloudPulse/blob/3d5e5d1d7b920098dd567307d5d8047639834e2c/Screenshots/Login%20Page.png" width="400">
 </p>
 
 ---
