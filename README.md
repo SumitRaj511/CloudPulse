@@ -8,14 +8,11 @@
 ![FastAPI](https://img.shields.io/badge/FastAPI-2.0-00d4ff?style=for-the-badge)
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge)
-![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-D71F00?style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge)
 ![Nginx](https://img.shields.io/badge/Nginx-Web%20Server-009639?style=for-the-badge)
 ![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=for-the-badge)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-Automation-2088FF?style=for-the-badge)
 ![AWS](https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge)
-![JWT](https://img.shields.io/badge/Auth-JWT-000000?style=for-the-badge)
-![RBAC](https://img.shields.io/badge/Security-RBAC-6c63ff?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-Administration-FCC624?style=for-the-badge)
 
 ---
@@ -244,7 +241,7 @@ python agent.py \
 
 # 🔄 CI/CD Automation
 
-CloudPulse uses **Jenkins** and **GitHub Actions** to automate the software delivery workflow.
+CloudPulse uses **GitHub Actions** to automate the software delivery workflow.
 
 ### Jenkins Pipeline
 
@@ -333,8 +330,6 @@ Deployment
 
 ### CI/CD & Automation
 - Jenkins
-- Jenkins Pipeline
-- Jenkinsfile
 - GitHub Actions
 - Docker-based deployment
 - CI/CD Automation
