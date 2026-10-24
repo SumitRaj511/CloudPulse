@@ -1,7 +1,5 @@
 # CloudPulse 🚀
 
-> **A full-stack infrastructure monitoring and alerting platform** — real-time server metrics, Docker container monitoring, smart alerts, JWT authentication, role-based access control, and automated CI/CD deployment using **GitHub Actions** to AWS EC2.
-
 ![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge)
 ![FastAPI](https://img.shields.io/badge/FastAPI-2.0-00d4ff?style=for-the-badge)
