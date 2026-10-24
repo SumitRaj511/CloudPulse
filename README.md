@@ -13,7 +13,7 @@
 ## Login Page
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/869a149c-79d9-47ec-bd0b-15af8af41f6c" width="850">
+<img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Login%20Page.png" width="800">
 </p>
 
 ---
@@ -21,7 +21,7 @@
 ## Dashboard
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/879ee511-14d0-458f-bc3b-2e5aeb8ffe0b" width="400">
+<img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Dashboard.png" width="800">
 </p>
 
 ---
@@ -29,7 +29,7 @@
 ## Servers
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/dea0d84a-0318-42ab-afe7-ab64b2300503" width="400">
+<img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Servers.png" width="800">
 </p>
 
 ---
@@ -37,7 +37,7 @@
 ## Containers
 
 <p align="center">
-<img src="https://github.com/SumitRaj511/CloudPulse/blob/3e4efadc72eb1aa68b9aa6682b1bcaaeed36b191/Screenshots/Containers.png" width="700">
+<img src="https://github.com/SumitRaj511/CloudPulse/blob/3e4efadc72eb1aa68b9aa6682b1bcaaeed36b191/Screenshots/Containers.png" width="800">
 </p>
 
 ---
