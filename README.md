@@ -1,8 +1,7 @@
 # CloudPulse 🚀
 
-> **A full-stack infrastructure monitoring and alerting platform** — real-time server metrics, Docker container monitoring, smart alerts, JWT authentication, role-based access control, and automated CI/CD deployment using **Jenkins and GitHub Actions** to AWS EC2.
+> **A full-stack infrastructure monitoring and alerting platform** — real-time server metrics, Docker container monitoring, smart alerts, JWT authentication, role-based access control, and automated CI/CD deployment using **GitHub Actions** to AWS EC2.
 
-![CloudPulse](https://img.shields.io/badge/CloudPulse-Infrastructure%20Monitoring-6c63ff?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge)
 ![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge)
 ![FastAPI](https://img.shields.io/badge/FastAPI-2.0-00d4ff?style=for-the-badge)
@@ -10,7 +9,6 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-4169E1?style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge)
 ![Nginx](https://img.shields.io/badge/Nginx-Web%20Server-009639?style=for-the-badge)
-![Jenkins](https://img.shields.io/badge/Jenkins-CI%2FCD-D24939?style=for-the-badge)
 ![GitHub Actions](https://img.shields.io/badge/GitHub%20Actions-Automation-2088FF?style=for-the-badge)
 ![AWS](https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge)
 ![Linux](https://img.shields.io/badge/Linux-Administration-FCC624?style=for-the-badge)
@@ -23,7 +21,7 @@
 
 It collects and displays real-time infrastructure metrics such as **CPU, memory, disk, and network usage**, while providing configurable alerts, log monitoring, authentication, and role-based access control.
 
-The application is containerized using **Docker Compose** and supports automated CI/CD workflows using **Jenkins and GitHub Actions**, with deployment to **AWS EC2**.
+The application is containerized using **Docker Compose** and supports automated CI/CD workflows using **GitHub Actions**, with deployment to **AWS EC2**.
 
 ---
 
@@ -74,7 +72,6 @@ The application is containerized using **Docker Compose** and supports automated
 | 👥 RBAC | Admin and Viewer role-based access |
 | ⚙️ Settings | Configurable monitoring thresholds and system settings |
 | 🔄 CI/CD Automation | Automated build, test, and deployment workflows |
-| 🔧 Jenkins Pipeline | Jenkins-based CI/CD pipeline automation |
 | ⚡ GitHub Actions | Automated workflow execution |
 | ☁️ AWS Deployment | Application deployment on AWS EC2 |
 
@@ -110,7 +107,7 @@ The application is containerized using **Docker Compose** and supports automated
              ┌─────────────────────────────────────────────┐
              │                CI/CD Pipeline                │
              │                                             │
-             │ GitHub → Jenkins → Docker → AWS EC2        │
+             │ GitHub → GitHub Actions → Docker → AWS EC2 │
              └─────────────────────────────────────────────┘
 ```
 
@@ -139,7 +136,6 @@ cloudpulse/
 │
 ├── screenshots/
 ├── docker-compose.yml
-├── Jenkinsfile
 └── README.md
 ```
 
@@ -156,7 +152,6 @@ Make sure you have:
 - Docker
 - Docker Compose
 - Git
-- Jenkins
 
 ---
 
@@ -243,30 +238,6 @@ python agent.py \
 
 CloudPulse uses **GitHub Actions** to automate the software delivery workflow.
 
-### Jenkins Pipeline
-
-```text
-Developer Push
-      ↓
-   GitHub
-      ↓
-   Jenkins
-      ↓
-   Checkout
-      ↓
-   Build
-      ↓
-   Test
-      ↓
-Docker Build
-      ↓
-Docker Deploy
-      ↓
-  AWS EC2
-```
-
-Jenkins Pipeline allows the build, test, and deployment workflow to be defined as code and automated through a `Jenkinsfile`.
-
 ### GitHub Actions
 
 GitHub Actions is used for repository-based workflow automation and CI/CD.
@@ -278,9 +249,11 @@ GitHub Actions
    ↓
 Build & Validate
    ↓
-Docker
+Docker Build
    ↓
-Deployment
+Docker Deploy
+   ↓
+AWS EC2
 ```
 
 ---
@@ -329,7 +302,6 @@ Deployment
 - Linux
 
 ### CI/CD & Automation
-- Jenkins
 - GitHub Actions
 - Docker-based deployment
 - CI/CD Automation
