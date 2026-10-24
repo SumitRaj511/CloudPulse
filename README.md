@@ -1,19 +1,32 @@
-# CloudOps Monitor 🚀
+# CloudPulse 🚀
 
-> **A full-stack infrastructure monitoring platform** — real-time server metrics, Docker container monitoring, JWT authentication, role-based access control, and automated CI/CD to AWS EC2.
+> **A full-stack infrastructure monitoring and alerting platform** — real-time server metrics, Docker container monitoring, smart alerts, JWT authentication, role-based access control, and automated CI/CD deployment to AWS EC2.
 
-![CloudOps Monitor](https://img.shields.io/badge/CloudOps-Monitor-6c63ff?style=for-the-badge)
-![FastAPI](https://img.shields.io/badge/FastAPI-2.0-00d4ff?style=for-the-badge)
+![CloudPulse](https://img.shields.io/badge/CloudPulse-Infrastructure%20Monitoring-6c63ff?style=for-the-badge)
 ![React](https://img.shields.io/badge/React-18-61dafb?style=for-the-badge)
+![FastAPI](https://img.shields.io/badge/FastAPI-2.0-00d4ff?style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge)
+![AWS](https://img.shields.io/badge/AWS-EC2-FF9900?style=for-the-badge)
+![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge)
 
 ---
+
+## 📌 Overview
+
+**CloudPulse** is a full-stack infrastructure monitoring platform designed to provide centralized visibility into server and Docker container health.
+
+It collects and displays real-time infrastructure metrics such as **CPU, memory, disk, and network usage**, while providing configurable alerts, log monitoring, authentication, and role-based access control.
+
+The application is containerized using **Docker Compose** and can be deployed to **AWS EC2 through a GitHub Actions CI/CD pipeline**.
+
+---
+
 # 📷 Screenshots
 
 ## Login Page
 
 <p align="center">
-<img src="https://github.com/SumitRaj511/CloudPulse/blob/3d5e5d1d7b920098dd567307d5d8047639834e2c/Screenshots/Login%20Page.png" width="400">
+  <img src="https://github.com/SumitRaj511/CloudPulse/blob/3d5e5d1d7b920098dd567307d5d8047639834e2c/Screenshots/Login%20Page.png" width="500">
 </p>
 
 ---
@@ -21,7 +34,7 @@
 ## Dashboard
 
 <p align="center">
-<img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Dashboard.png" width="800">
+  <img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Dashboard.png" width="850">
 </p>
 
 ---
@@ -29,7 +42,7 @@
 ## Servers
 
 <p align="center">
-<img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Servers.png" width="800">
+  <img src="https://github.com/SumitRaj511/CloudPulse/blob/0a6679266e8857f27d60217bb2103a846e1a7dfe/Screenshots/Servers.png" width="850">
 </p>
 
 ---
@@ -37,71 +50,157 @@
 ## Containers
 
 <p align="center">
-<img src="https://github.com/SumitRaj511/CloudPulse/blob/3e4efadc72eb1aa68b9aa6682b1bcaaeed36b191/Screenshots/Containers.png" width="800">
+  <img src="https://github.com/SumitRaj511/CloudPulse/blob/3e4efadc72eb1aa68b9aa6682b1bcaaeed36b191/Screenshots/Containers.png" width="850">
 </p>
 
 ---
 
-## Features
+# ✨ Features
 
 | Feature | Description |
 |---------|-------------|
-| Server Monitoring | Real-time CPU, RAM, disk, network per server |
-| Docker Monitoring | Container health, CPU/memory usage, start/stop |
-| Smart Alerts | Configurable thresholds, acknowledge workflow |
-| Log Stream | Terminal-style live log viewer with filtering |
-| Historical Charts | Recharts area/line charts with live updates |
-| JWT Auth + RBAC | Admin and Viewer roles |
-| Settings | Threshold config, toggle switches, danger zone |
-| CI/CD | GitHub Actions to Docker to AWS EC2 |
+| 🖥️ Server Monitoring | Real-time CPU, RAM, disk, and network monitoring |
+| 🐳 Docker Monitoring | Container health and resource usage monitoring |
+| 🚨 Smart Alerts | Configurable thresholds and alert acknowledgement |
+| 📋 Log Stream | Live terminal-style log viewer with filtering |
+| 📊 Historical Charts | Performance visualization using Recharts |
+| 🔐 JWT Authentication | Secure user authentication |
+| 👥 RBAC | Admin and Viewer role-based access |
+| ⚙️ Settings | Configurable monitoring thresholds and system settings |
+| 🚀 CI/CD | Automated Docker deployment to AWS EC2 |
 
 ---
 
-## Architecture
+# 🏗️ Architecture
 
+```text
+                         ┌──────────────────────┐
+                         │      React UI        │
+                         │   Dashboard / Logs   │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │     FastAPI API      │
+                         │ Auth / Metrics / API │
+                         └───────┬───────┬──────┘
+                                 │       │
+                    ┌────────────┘       └─────────────┐
+                    ▼                                  ▼
+           ┌─────────────────┐                ┌─────────────────┐
+           │   PostgreSQL    │                │ Monitoring Agent│
+           │     Database    │                │ psutil + Docker │
+           └─────────────────┘                └────────┬────────┘
+                                                       │
+                                                       ▼
+                                             ┌─────────────────┐
+                                             │ Docker / Server │
+                                             │ Infrastructure  │
+                                             └─────────────────┘
+
+                    GitHub Actions → Docker → AWS EC2
 ```
-cloudops-monitor/
-├── src/                    # React frontend
-│   ├── components/         # Sidebar, Header, CircularProgress
-│   ├── pages/              # Dashboard, Servers, Docker, Alerts, Logs, Settings
-│   ├── context/            # AuthContext (JWT simulation)
-│   └── data/               # Mock data (servers, alerts, logs)
-├── backend/                # FastAPI backend
-│   ├── main.py             # API routes, auth, psutil metrics
+
+---
+
+# 📁 Project Structure
+
+```text
+cloudpulse/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   └── data/
+│
+├── backend/
+│   ├── main.py
 │   └── requirements.txt
-├── agent/                  # Python monitoring agent
-│   └── agent.py            # psutil + Docker SDK collector
-├── .github/workflows/      # CI/CD pipeline
-│   └── ci-cd.yml
-├── docker-compose.yml      # Full stack orchestration
+│
+├── agent/
+│   └── agent.py
+│
+├── .github/
+│   └── workflows/
+│       └── ci-cd.yml
+│
+├── screenshots/
+├── docker-compose.yml
 └── README.md
 ```
 
 ---
 
-## Quick Start
+# ⚙️ Getting Started
 
-### Frontend Only (Dev)
+## Prerequisites
+
+Make sure you have:
+
+- Node.js
+- Python 3
+- Docker
+- Docker Compose
+- Git
+
+---
+
+## Frontend
 
 ```bash
 npm install
 npm run dev
-# Open http://localhost:5173
 ```
 
-Demo Credentials:
-- Admin: admin@cloudops.io / admin123
-- Viewer: viewer@cloudops.io / viewer123
+Open:
 
-### Full Stack (Docker)
+```text
+http://localhost:5173
+```
+
+### Demo Credentials
+
+```text
+Admin
+Email: admin@cloudops.io
+Password: admin123
+
+Viewer
+Email: viewer@cloudops.io
+Password: viewer123
+```
+
+---
+
+## 🐳 Run with Docker
+
+Start the complete application:
 
 ```bash
 docker-compose up -d
-# Frontend: http://localhost
-# API docs: http://localhost:8000/docs
 ```
 
-### Backend Only
+Frontend:
+
+```text
+http://localhost
+```
+
+API documentation:
+
+```text
+http://localhost:8000/docs
+```
+
+Stop the application:
+
+```bash
+docker-compose down
+```
+
+---
+
+## 🐍 Backend
 
 ```bash
 cd backend
@@ -109,46 +208,133 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-### Monitoring Agent
+---
+
+## 📡 Monitoring Agent
 
 ```bash
 cd agent
 pip install psutil requests docker
-python agent.py --server-id 1 --api-url http://localhost:8000 --interval 60
+
+python agent.py \
+  --server-id 1 \
+  --api-url http://localhost:8000 \
+  --interval 60
 ```
 
 ---
 
-## API Endpoints
+# 🔌 API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | /api/auth/login | JWT authentication |
-| GET | /api/servers | List all servers |
-| GET | /api/servers/{id}/metrics | Real-time metrics (psutil) |
-| POST | /api/servers | Add server (admin only) |
-| GET | /api/docker/containers | List Docker containers |
-| GET | /api/alerts | Get all alerts |
-| POST | /api/alerts/{id}/acknowledge | Acknowledge alert |
-| GET | /api/logs | Get log entries (filterable) |
-| GET | /api/health | API health check |
+| POST | `/api/auth/login` | JWT authentication |
+| GET | `/api/servers` | List monitored servers |
+| GET | `/api/servers/{id}/metrics` | Get real-time server metrics |
+| POST | `/api/servers` | Add a server |
+| GET | `/api/docker/containers` | List Docker containers |
+| GET | `/api/alerts` | Retrieve alerts |
+| POST | `/api/alerts/{id}/acknowledge` | Acknowledge an alert |
+| GET | `/api/logs` | Retrieve filtered logs |
+| GET | `/api/health` | API health check |
 
 ---
 
-## Tech Stack
+# 🛠️ Tech Stack
 
-- Frontend: React 18, Recharts, Vite
-- Backend: FastAPI, psutil, PyJWT, Docker SDK
-- Database: PostgreSQL, SQLAlchemy
-- Infrastructure: Docker Compose, Nginx, AWS EC2
-- CI/CD: GitHub Actions
+### Frontend
+- React
+- Vite
+- Recharts
+- Axios
+- React Router
+
+### Backend
+- FastAPI
+- Python
+- PyJWT
+- SQLAlchemy
+- psutil
+- Docker SDK
+
+### Database
+- PostgreSQL
+
+### DevOps & Infrastructure
+- Docker
+- Docker Compose
+- Nginx
+- AWS EC2
+- GitHub Actions
 
 ---
 
-## Resume Points
+# 🚀 CI/CD Pipeline
 
-CloudOps Monitor - Infrastructure Monitoring and Alerting Platform:
-- Developed a full-stack infrastructure monitoring platform using React, FastAPI, and PostgreSQL to monitor server health, CPU, memory, disk, and network metrics.
-- Built a Python-based monitoring agent using psutil and Docker SDK for real-time infrastructure and container health tracking.
-- Implemented JWT authentication, role-based access control (RBAC), configurable alert thresholds, and historical performance dashboards.
-- Containerized the application using Docker Compose and automated deployment to AWS EC2 using a GitHub Actions CI/CD pipeline.
+CloudPulse uses **GitHub Actions** to automate the deployment workflow.
+
+```text
+Git Push
+   ↓
+GitHub Actions
+   ↓
+Build Application
+   ↓
+Build Docker Images
+   ↓
+Deploy to AWS EC2
+   ↓
+Run Containers
+   ↓
+Application Live
+```
+
+---
+
+# 🔐 Security
+
+CloudPulse includes:
+
+- JWT-based authentication
+- Role-Based Access Control (RBAC)
+- Admin and Viewer roles
+- Protected API endpoints
+- Configurable monitoring thresholds
+- Containerized services
+
+---
+
+# 📈 Monitoring Capabilities
+
+The monitoring agent collects infrastructure information using **psutil** and the Docker SDK.
+
+Monitored resources include:
+
+- CPU utilization
+- Memory utilization
+- Disk usage
+- Network activity
+- Docker container health
+- Container CPU and memory usage
+- Application logs
+
+---
+
+# 💼 Resume Points
+
+**CloudPulse – Infrastructure Monitoring & Alerting Platform**
+
+- Built a full-stack monitoring platform using **React, FastAPI, and PostgreSQL**.
+- Developed **Python-based server and Docker monitoring** with real-time alerts.
+- Implemented **Docker, GitHub Actions CI/CD, and AWS EC2** deployment.
+
+---
+
+# 👨‍💻 Author
+
+**Sumit Raj**
+
+B.Tech – Computer Science & Cyber Security  
+Dayananda Sagar University, Bangalore
+
+---
